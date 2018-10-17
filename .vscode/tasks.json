@@ -9,6 +9,13 @@
       "command": "node-sass scss/styles.scss css/styles.css",
       "group": "build",
       "problemMatcher": []
+    },
+    {
+      "label": "Gulp Default",
+      "type": "gulp",
+      "task": "default",
+      "group": "build",
+      "problemMatcher": []
     }
   ]
 }
