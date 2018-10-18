@@ -11,10 +11,9 @@
       "problemMatcher": []
     },
     {
-      "label": "Gulp Default",
-      "type": "gulp",
-      "task": "default",
-      "group": "build",
+      "label": "Gulp Build",
+      "type": "npm",
+      "script": "gulp",
       "problemMatcher": []
     }
   ]
