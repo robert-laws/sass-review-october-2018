@@ -1,0 +1,18 @@
+/*** font import ***/
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
+@import url(http://fonts.googleapis.com/css?family=Merriweather:100,300,400,700,900);
+
+
+/*** variables ***/
+$off-white:     #EEE8D6;
+$dark-blue:     #022933;
+$orange:        #F39856;
+$yellow:        #FFBA00;
+$red:           #FF1100;
+
+$color-main:    $dark-blue;
+$color-highlight: $red;
+$color-background:  $off-white;
+
+$font-main: 'Lato', Helvetica, sans-serif;
+$font-highlight: 'Merriweather', Helvetica, sans-serif;

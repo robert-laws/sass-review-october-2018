@@ -1,0 +1,17 @@
+/*** base styles ***/
+
+body {
+  font-size: 1.2rem;
+  background: $color-background;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: $color-highlight;
+  font-family: $font-highlight;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: $font-main;
+}

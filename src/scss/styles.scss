@@ -1,33 +1,4 @@
-/*** font import ***/
-@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
-@import url(http://fonts.googleapis.com/css?family=Merriweather:100,300,400,700,900);
+@import "variables";
+@import "base";
 
-
-/*** variables ***/
-$off-white:     #EEE8D6;
-$dark-blue:     #022933;
-$orange:        #F39856;
-$yellow:        #FFBA00;
-$red:           #FF1100;
-
-$color-main:    $dark-blue;
-$color-highlight: $red;
-$color-background:  $off-white;
-
-$font-main: 'Lato', Helvetica, sans-serif;
-$font-highlight: 'Merriweather', Helvetica, sans-serif;
-
-body {
-  font-size: 1.2rem;
-  background: $color-background;
-}
-
-h1,h2,h3,h4,h5,h6 {
-  color: $color-highlight;
-  font-family: $font-highlight;
-}
-
-p {
-  font-size: 1rem;
-  font-family: $font-main;
-}
+@import "modules/media";
