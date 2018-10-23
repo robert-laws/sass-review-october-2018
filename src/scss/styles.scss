@@ -1,0 +1,15 @@
+/*** variables ***/
+$off-white:     #EEE8D6;
+$dark-blue:     #022933;
+$orange:        #F39856;
+$yellow:        #FFBA00;
+
+$color-main:    $dark-blue;
+$color-background:  $off-white;
+
+body {
+  font-size: 1.2rem;
+  font-family: "Lato", Helvetica, sans-serif;
+  color: $color-main;
+  background: $color-background;
+}
