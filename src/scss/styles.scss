@@ -1,4 +1,6 @@
-@import "core/variables";
-@import "core/base";
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/base";
 
 @import "modules/media";
+@import "modules/backgrounds";
