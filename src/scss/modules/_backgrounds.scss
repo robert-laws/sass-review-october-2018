@@ -15,17 +15,21 @@
     font-family: $font-main;
     font-size: 5rem;
     line-height: 105%;
-    margin-bottom: 0;
+    margin-bottom: 10px;
     padding: 0 10%;
   }
 
   p {
     padding: 0 10%;
     margin-top: 0;
+    font-size: 1.4rem;
   }
 }
 
 .jumbotron {
-  background-color: $color-main;
-  height: 600px;
+  @include backImage('../img/hero.jpg', 600px, top center);
+}
+
+.bridge {
+  @include backImage('../img/hero2.jpg', 600px, bottom center);
 }

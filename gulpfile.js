@@ -3,22 +3,44 @@ var sass = require('gulp-sass');
 var del = require('del');
 var browserSync = require("browser-sync").create();
 
+	
+var paths = {
+  styles: {      
+    src: "src/scss/**/*.scss",
+    dest: "dist/css"
+  },
+  html: {
+    src: "src/**/*.html",
+    dest: "dist"
+  },
+  images: {
+    src: ["src/images/**/*.jpg", "src/images/**/*.png", "src/images/**/*.ico"],
+    dest: "dist/img"
+  }
+}
+
 gulp.task('html', function() {
-  return gulp.src('src/**/*.html')
-    .pipe(gulp.dest('dist/'))
+  return gulp.src(paths.html.src)
+    .pipe(gulp.dest(paths.html.dest))
     .pipe(browserSync.stream())
-})
+});
 
 gulp.task('sass', function () {
-  return gulp.src('src/scss/*.scss')
+  return gulp.src(paths.styles.src)
     .pipe(sass())
-    .pipe(gulp.dest('dist/css'))
+    .pipe(gulp.dest(paths.styles.dest))
+    .pipe(browserSync.stream())
+});
+
+gulp.task('images', function() {
+  return gulp.src(paths.images.src)
+    .pipe(gulp.dest(paths.images.dest))
     .pipe(browserSync.stream())
 });
 
 gulp.task('del', function () {
   return del(['dist']);
-})
+});
 
 gulp.task('watch', function () {
   browserSync.init({
@@ -26,7 +48,7 @@ gulp.task('watch', function () {
       baseDir: "./dist"
     }
   });
-  gulp.watch(['src/scss/**/*.scss', 'src/*.html'], ['html', 'sass'])
+  gulp.watch(['src/scss/**/*.scss', 'src/*.html'], ['html', 'images', 'sass'])
 });
 
-gulp.task('default', ['html', 'sass', 'watch'])
+gulp.task('default', ['html', 'sass', 'images', 'watch'])
