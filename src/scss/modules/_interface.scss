@@ -1,0 +1,36 @@
+$color-btn-default: $dark-blue;
+$color-btn-text: $color-main;
+$color-btn-hot: $red;
+$color-btn-cool: $blue;
+
+%btn {
+  display: inline-block;
+  padding: 6px 12px;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  font-family: $font-highlight;
+  user-select: none;
+  color: $color-btn-text;
+}
+
+.btn-default {
+  @extend %btn;
+  background: $color-btn-default;
+  color: $yellow;
+}
+
+.btn-hot {
+  @extend %btn;
+  background: $color-btn-hot;
+  color: $color-btn-text;
+}
+
+.btn-cool {
+  @extend %btn;
+  background: $color-btn-cool;
+  color: $red;
+}
