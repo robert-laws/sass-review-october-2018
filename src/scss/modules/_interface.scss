@@ -34,3 +34,19 @@ $color-btn-cool: $blue;
   background: $color-btn-cool;
   color: $red;
 }
+
+.grid {
+  margin: 10px 0;
+  @include clearfix;
+
+  .item {
+    float: left;
+    @include imagegrid(3, 2%);
+  }
+  
+  img {
+    display: block;
+    border-radius: 10px;
+    max-width: 100%;
+  }
+}
