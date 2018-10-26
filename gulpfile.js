@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 var del = require('del');
 var browserSync = require("browser-sync").create();
 
@@ -27,7 +28,16 @@ gulp.task('html', function() {
 
 gulp.task('sass', function () {
   return gulp.src(paths.styles.src)
-    .pipe(sass())
+    .pipe(sass(
+      {
+        sourcemaps: true,
+        style: 'expanded'
+      }
+    ))
+    .on('error', function(err) {
+      console.log('Error!' + err.message);
+    })
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest(paths.styles.dest))
     .pipe(browserSync.stream())
 });

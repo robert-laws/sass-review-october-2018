@@ -20,10 +20,11 @@
   },
   "homepage": "https://github.com/robert-laws/sass-review-october-2018#readme",
   "devDependencies": {
+    "browser-sync": "^2.26.3",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-sass": "^4.0.2",
-    "browser-sync": "^2.26.3"
+    "gulp-sourcemaps": "^2.6.4"
   },
   "dependencies": {}
 }
