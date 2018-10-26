@@ -2,6 +2,7 @@ $color-btn-default: $dark-blue;
 $color-btn-text: $color-main;
 $color-btn-hot: $red;
 $color-btn-cool: $blue;
+$roundness: 5px 10px 20px 30px; // used as a list of items in sass
 
 %btn {
   display: inline-block;
@@ -46,7 +47,7 @@ $color-btn-cool: $blue;
   
   img {
     display: block;
-    border-radius: 10px;
+    border-radius: nth($roundness, 4);
     max-width: 100%;
   }
 }
