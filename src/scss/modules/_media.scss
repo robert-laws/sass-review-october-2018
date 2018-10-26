@@ -9,15 +9,19 @@ $color-media-head: $dark-blue;
   list-style: none;
 
   .item {
-    margin-bottom: 20px;
+    padding-bottom: 10px;
     border-top: 1px dotted $color-item-border;
+    padding-left: 10px;
     padding-top: 10px;
 
-    &::after {
-      content: "";
-      display: table;
-      clear: both;
+    &:hover {
+      background: $yellow;
     }
+
+    &:last-of-type {
+      border-bottom: 1px dotted $color-item-border;
+    }
+    @include clearfix;
   }
 
   .head {
@@ -25,6 +29,11 @@ $color-media-head: $dark-blue;
     padding: 0;
     color: $color-media-head;
     font-size: 2rem;
+
+    /* for a head class sitting within a #typography id - apply this style */
+    #typography & {
+      color: red;
+    }
   }
 
   p {
