@@ -15,25 +15,19 @@ $roundness: 5px 10px 20px 30px; // used as a list of items in sass
   border-radius: 4px;
   font-family: $font-highlight;
   user-select: none;
-  color: $color-btn-text;
+  color: $color-background;
 }
 
-.btn-default {
-  @extend %btn;
-  background: $color-btn-default;
-  color: $yellow;
-}
+$color-btn-names: 'default', 'hot', 'cool';
+$color-btn-values: $color-main, $red, $blue;
 
-.btn-hot {
-  @extend %btn;
-  background: $color-btn-hot;
-  color: $color-btn-text;
-}
+@each $name in $color-btn-names {
+  $i: index($color-btn-names, $name);
 
-.btn-cool {
-  @extend %btn;
-  background: $color-btn-cool;
-  color: $red;
+  .btn-#{$name} {
+    @extend %btn;
+    background-color: nth($color-btn-values, $i);
+  }
 }
 
 .grid {

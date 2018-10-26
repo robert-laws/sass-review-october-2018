@@ -5,8 +5,15 @@ body {
   background: $color-background;
 }
 
+$color-headlines: $green, $red, $orange, $yellow, $blue, $purple;
+
+@for $item from 1 through length($color-headlines) {
+  h#{$item} {
+    color: darken(nth($color-headlines, $item), 15%);
+  }
+}
+
 h1,h2,h3,h4,h5,h6 {
-  color: $color-highlight;
   font-family: $font-highlight;
 }
 
