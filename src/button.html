@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Sass Review - October 2018</title>
+  <style>
+    .myBigButton {display: none;}
+  </style>
+</head>
+<body>
+    <div><label>Hello</label> <input class="check-boxes" type="checkbox" onchange="showButton()"></div>
+    <div><label>Have a nice days</label> <input class="check-boxes" type="checkbox" onchange="showButton()"></div>
+    <div><label>Get milk</label> <input class="check-boxes" type="checkbox" onchange="showButton()"></div>
+  <br>
+  <!-- <button id="buttonOne">Remove To Do(s)</button> -->
+
+  <script>
+    // let btn = document.getElementById("buttonNew");
+    let btn = document.createElement('button');
+    btn.textContent = "Click Here!"
+    btn.setAttribute('id', 'buttonNew')
+    btn.setAttribute('class', 'myBigButton');
+    btn.setAttribute('onclick', 'removeChecked()');
+
+    document.body.appendChild(btn);
+
+    function showButton() {
+      let checkboxes = document.getElementsByClassName('check-boxes');
+      for(let i = 0; i < checkboxes.length; i++) {
+        if(checkboxes[i].checked == true) {
+          document.getElementById('buttonNew').style.display = "block";
+          break;
+        } else {
+          document.getElementById('buttonNew').style.display = "none";
+        }
+      }
+    }
+
+    function removeChecked() {
+      let checkboxes = document.getElementsByClassName('check-boxes');
+      for(let i = 0; i < checkboxes.length; i++) {
+        if(checkboxes[i].checked == true) {
+          checkboxes[i].parentNode.remove();
+        } else {
+          // do nothing
+        }
+      }
+    }
+  </script>
+</body>
+</html>
