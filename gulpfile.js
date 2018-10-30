@@ -28,15 +28,12 @@ gulp.task("html", function() {
 
 gulp.task("sass", function () {
   return gulp.src(paths.styles.src)
+    .pipe(sourcemaps.init())
     .pipe(sass(
       {
-        sourcemaps: true,
-        style: "expanded"
+        outputStyle: "expanded"
       }
-    ))
-    .on("error", function(err) {
-      console.log("Error!" + err.message);
-    })
+    ).on("error", sass.logError))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(paths.styles.dest))
     .pipe(browserSync.stream());
